@@ -45,7 +45,13 @@ foreach ($Pipeline in $azurePipelines) {
   }
 }
 
-Write-Output "$($PipelinesArray.Count) Pipelines have been identified."
+if ($PipelinesArray.Count -gt 0) {
+  Write-Output "$($PipelinesArray.Count) Pipelines have been identified."
+} else {
+  Write-Output "No Pipelines have been identified. Exiting."
+  Start-Sleep 1
+  exit
+}
 
 if ($OldPipelinesArray) {
   Write-Output "$($OldPipelinesArray.Count) Modules are older than $Version and will be skipped."
@@ -104,9 +110,10 @@ foreach ($Pipeline in $PipelinesArray) {
   }
 }
 
+Write-Host "Please wait " -NoNewline
+
 while (Get-Job -State Running) {
   Start-Sleep 5
-  Write-Host "Please wait " -NoNewline
   Write-Host ". " -NoNewline
 }
 Write-Output "$($PipelinesCreated.Count) Azure Pipeline(s) have been created!"

@@ -7,14 +7,17 @@ It also compares against existing Pipelines and skips these.
 
 ## Parameters
 
-- OrganizationNam - Azure DevOps Organization
-- ProjectName - Azure DevOps Project
-- RepositoryName Azure DevOps Repository
-- FolderPath - Azure Pipelines folder path
-- Version - Pipeline versions to be used
-- PipelinePath - Local folder path to be browsed
-- Latest - Latest Pipeline versions to be created
-- All - All Pipeline versions to be created
+**Mandatory**
+- OrganizationName (Azure DevOps Organization)
+- ProjectName (Azure DevOps Project)
+- RepositoryName (Azure DevOps Repository)
+
+**Optional**
+- FolderPath (Azure Pipelines folder path)
+- Version (Pipeline versions to be used)
+- PipelinePath (Local folder path to be browsed)
+- Latest (Latest Pipeline versions to be created)
+- All (All Pipeline versions to be created)
 
 ## Usage
 
@@ -32,12 +35,6 @@ It also compares against existing Pipelines and skips these.
 Contributor (Azure DevOps)
 
 ## Base Folder Structure
-
-Based on this structure it recognizes
-
-- `Module0` and `Module1` as Pipeline names
-- `2020-04-20` as corresponding versions
-- Azure Pipeline based on a `pipeline.yml`
 
 root
  ┣ Module0
@@ -58,8 +55,19 @@ root
  ┃ .
  ┗ New-AzPipeline.ps1
 
+Based on this structure `New-AzPipeline.ps1` recognizes
 
+- `Module0` and `Module1` as Pipeline names
+- `2020-04-20` as corresponding versions
+- Azure Pipelines based on `pipeline.yml`
 
- ## Contributions
+## Impressions
 
- Thanks to @simonbMS for helping me out with the object comparions in order to have only the latest folders picked for the `-Latest` switch.
+![](.attachments/images/2020-05-28-16-31-58.png)
+![](.attachments/images/2020-05-28-16-27-23.png)
+
+![](.attachments/images/2020-05-28-16-39-19.png)
+
+## Contributions
+
+ Thanks to [@simonbms](https://github.com/simonbms) for helping me out with the object comparions in order to have only the latest folders picked for the `-Latest` switch.
