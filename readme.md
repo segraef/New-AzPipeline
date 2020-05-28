@@ -36,6 +36,7 @@ Contributor (Azure DevOps)
 
 ## Base Folder Structure
 
+```
 root
  ┣ Module0
  ┃ ┗ 2020-04-20
@@ -54,6 +55,7 @@ root
  ┃ .
  ┃ .
  ┗ New-AzPipeline.ps1
+ ```
 
 Based on this structure `New-AzPipeline.ps1` recognizes
 
@@ -63,10 +65,12 @@ Based on this structure `New-AzPipeline.ps1` recognizes
 
 ## Impressions
 
+![](.attachments/images/2020-05-28-16-50-18.png)
+
 ![](.attachments/images/2020-05-28-16-31-58.png)
 ![](.attachments/images/2020-05-28-16-27-23.png)
 
-![](.attachments/images/2020-05-28-16-39-19.png)
+![](.attachments/images/2020-05-28-16-48-26.png)
 
 ## Contributions
 
